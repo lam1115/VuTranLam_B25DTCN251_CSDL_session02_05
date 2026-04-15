@@ -25,7 +25,8 @@ CREATE TABLE transactions (
     transactionTime DATETIME NOT NULL,
     transactionStatus VARCHAR(20) NOT NULL,
     walletId INT NOT NULL UNIQUE,
-    FOREIGN KEY (walletId) references e_wallet(walletId)
+    FOREIGN KEY (walletId) references e_wallet(walletId),
+	create_at DATETIME DEFAULT (CURRENT_TIMESTAMP()),
 );
 
 SELECT * FROM users;
